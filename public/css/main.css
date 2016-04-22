@@ -62,16 +62,20 @@ html, body {
 #app .side-content .shade-index .number-value, #app .side-content .shade-index .glyphicon {
   font-size: 40px;
 }
-/* line 58, ../scss/base.scss */
+/* line 56, ../scss/base.scss */
+#app .side-content .shade-index .number-value {
+  margin-left: 20px;
+}
+/* line 61, ../scss/base.scss */
 #app .side-content h3 {
   display: inline-block;
   margin-left: 10px;
 }
-/* line 63, ../scss/base.scss */
+/* line 66, ../scss/base.scss */
 #app .side-content .header-icon {
   font-size: 30px;
 }
-/* line 69, ../scss/base.scss */
+/* line 72, ../scss/base.scss */
 #app table td {
   padding-right: 30px;
 }
