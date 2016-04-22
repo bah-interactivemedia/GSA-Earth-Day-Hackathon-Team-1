@@ -5,7 +5,6 @@ var browserify = require('browserify');
 var watchify = require('watchify');
 var babel = require('babelify');
 
-
 function compile(watch) {
 
 

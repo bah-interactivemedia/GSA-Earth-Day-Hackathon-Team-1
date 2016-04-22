@@ -13,6 +13,7 @@
     "babel-preset-react": "^6.3.13",
     "babelify": "^7.2.0",
     "browser-cookies": "^1.0.8",
+    "gulp-sourcemaps": "^1.6.0",
     "jquery": "^2.2.1",
     "lodash": "^4.6.1",
     "mousetrap": "^1.5.3",
