@@ -53,7 +53,7 @@ app.get('/api/:latlong', function (request, response) {
 //console.log(bodyChunks);
 		}).on('end', function() {
 			var body = Buffer.concat(bodyChunks);
-			//console.log(body +"");
+			console.log(body +"");
 			fipsCodes = JSON.parse(body+"");
 			// ...and/or process the entire body here.
 			 fipsCodes = fipsCodes['result']['geographies']['2010 Census Blocks'][0];
@@ -75,6 +75,8 @@ app.get('/api/:latlong', function (request, response) {
 			let trees = [];
 			let areaShade = 0;
 
+			blockObject['blockGroup'] = blockGroup;
+			//blockObject['population'] = population;
 
 			var sqrtArea = Math.sqrt((arealand))*0.00189394;
 
@@ -83,7 +85,7 @@ app.get('/api/:latlong', function (request, response) {
 			var deltaLat = change_in_latitude( sqrtArea )/2;
 			var deltaLong = change_in_longitude(centLat, sqrtArea)/2;
 
-
+//			http://api.census.gov/data/2013/acs5?get=NAME,B01003_001E,B19013_001E&for=block+group:1&in=state:11+county:001+tract:000100&key=c5937f1fcd0b73c260f6da47c2e323354cf3c295
 
 
 console.log(arealand,deltaLat,deltaLong, centLat,centLong);
@@ -107,17 +109,17 @@ var queryStringSum = "SELECT SUM(areaShade) AS summedAreaShade FROM trees WHERE 
 					curTree["lat"] = rows[i]['lat'];
 					curTree["lng"] = rows[i]['lng'];
 					curTree["cond"] = rows[i]['cond'];
-					//console.log(curTree);
+					console.log(curTree);
 					trees.push(curTree);
 				}
 //console.log(trees);
-				response.status(status).send(trees,block);
+			 	blockObject["score"] = arealand / areaShade;
+				response.status(status).send(trees,blockObject);
 			});
 
 // //conditon of trees
 //
 // //todo: calculate score
-// 	blockObject["score"] = arealand / areaShade;
 			//population
 			//income
 
@@ -139,8 +141,6 @@ var queryStringSum = "SELECT SUM(areaShade) AS summedAreaShade FROM trees WHERE 
 			// 	}
 			// ]
 			// }
-			console.log(lat);
-			console.log(long);
 
 
 		})
