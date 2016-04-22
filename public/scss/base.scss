@@ -1,6 +1,18 @@
 @import "variables";
+
+html, body {
+  background-color: $highlight-gray;
+  height: 100%;
+}
+
 #app {
   background-color: $highlight-gray;
+  height: 100%;
+
+  .content {
+    margin-top: 20px;
+  }
+
   header {
     background-color: $background-gray;
     display: inline-flex;
@@ -30,6 +42,35 @@
     background-color: $dark-blue;
   }
   .map, #map1 {
-    height: 300px;
+    height: 500px;
+  }
+
+  .side-content {
+    background-color: $light-blue;
+    color: #FFFFFF;
+
+    .shade-index {
+      .number-value, .glyphicon {
+        font-size: 40px;
+      }
+      .number-value {
+        margin-left: 20px;
+      }
+      font-size: 20px;
+    }
+    h3 {
+      display: inline-block;
+      margin-left: 10px;
+    }
+
+    .header-icon {
+        font-size: 30px;
+    }
+  }
+
+  table {
+    td {
+      padding-right: 30px;
+    }
   }
 }
