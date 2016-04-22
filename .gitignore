@@ -1,2 +1,4 @@
 node_modules/
 .idea/
+public/scss/.sass-cache
+config.codekit

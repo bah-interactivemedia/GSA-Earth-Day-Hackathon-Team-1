@@ -1,11 +1,11 @@
 #app {
-  background-color: @highlight-gray;
+  background-color: $highlight-gray;
   header {
-    background-color: @background-gray;
+    background-color: $background-gray;
     display: inline-flex;
     height: 70px;
     h1 {
-      color: @tree-green;
+      color: $tree-green;
       font-family: "Century Gothic", sans-serif;
       font-size: 50px;
     }
