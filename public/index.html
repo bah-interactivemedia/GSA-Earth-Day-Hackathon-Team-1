@@ -2,11 +2,42 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <title></title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+    <title>DC Shade</title>
 </head>
 <body>
-    <div id="app">
-        Hello world
+    <div id="app" class="container">
+        <header>
+            <div class="logo"></div>
+            <h1>DC SHADE</h1>
+        </header>
+        <div class="row">
+            <div class="serach-bar">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter Address">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default" type="button">
+                                <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                        </button>
+                    </span>
+                </div><!-- /input-group -->
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6" id="map-col">
+                Map
+            </div>
+            <div class="col-sm-6 info-col" id="intro-text">
+                <h2>Throw Some Shade</h2>
+                <p> The tree canopy in our neighborhoods reduces energy used to heat and
+                    cool our buildings, protects us from overexposure to the sun and the health complications that
+                    can result, and reduces urban heat island effect.</p>
+                <p>Enter an address to calculate a shade score for your area, view types of trees in the neighborhood,
+                and generate insights relating shade coverage to census data. </p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
