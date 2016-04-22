@@ -1,6 +1,7 @@
 var React = require('react');
 var TreeRow = require('./TreeRow.jsx');
 var TreeList = require('./TreeList.jsx');
+var _ = require('lodash');
 
 class TreeData extends React.Component {
 
@@ -13,7 +14,7 @@ class TreeData extends React.Component {
 			});
 		}
 
-		var shadeIndex = 0;
+		var shadeIndex = 4;
 
 		var verbage = 'no';
 		if (shadeIndex < 2.5 && shadeIndex > 0) {
@@ -29,11 +30,28 @@ class TreeData extends React.Component {
 			verbage = 'lots of';
 		}
 
+		var population = 2258;
+		var rate = Math.round(population/this.props.data.response.trees.length);
+
+		var allTypes = [];
+		this.props.data.response.trees.forEach(function(tree) {
+			allTypes.push(tree.cmmn_name);
+		});
+
+		var uniqueTypes = _.orderBy(_.uniq(allTypes));
+		var types = '';
+		if (uniqueTypes.length > 0) {
+			types = uniqueTypes.map(function(item, index) {
+				return <TreeList value={item} key={index} />;
+			})
+		}
+
+		var income = '$124,719';
 		return (
 			<div>
 				<div className="shade-index">
 				    <span className="glyphicon glyphicon glyphicon-sunglasses" aria-hidden="true"></span>
-				    <span className="number-value">{shadeIndex}</span>
+				    <span className="number-value">Shade Index: {shadeIndex}</span>
 				    <div className="shade-description">{'Throwin\' ' + verbage + ' shade'}</div>
 				</div>
 				<div className="info-group">
@@ -42,16 +60,17 @@ class TreeData extends React.Component {
 				        <h3>Types of Trees</h3>
 				    </div>
 				    <ul>
-				        <li>Type</li>
+				        {types}
 				    </ul>
 				</div>
 				<div className="info-group">
 				    <div className="group-heading">
 				        <span className="glyphicon glyphicon-tree-deciduous header-icon" aria-hidden="true"></span>
-				        <h3>Census Block Group [] Summary</h3>
+				        <h3>Census Block Group Summary</h3>
 				    </div>
-				    <p><span>Population:</span>[Population]</p>
-				    <p><span>Trees per person:</span>[trees/ppl]</p>
+				    <p><span>Median Income: </span>{income}</p>
+				    <p><span>Population: </span>{population}</p>
+				    <p><span>Trees per person: </span>{rate}</p>
 				</div>
 
 				<table className="table table-bordered">

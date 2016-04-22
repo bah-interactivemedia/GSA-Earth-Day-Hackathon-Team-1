@@ -27,6 +27,7 @@ class MapComponent extends React.Component {
 		this.props.data.response.trees.forEach(function(tree) {
 			var treePos = [tree.lat, tree.lng];
 			var treeMarker = L.marker(treePos, {icon: treeIcon}).addTo(map);
+			treeMarker.bindPopup('<b>' + tree.cmmn_name + '</b><br />' + tree.cond + ' condition');
 		});
 
 	}

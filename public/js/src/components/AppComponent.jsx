@@ -21,7 +21,7 @@ class AppComponent extends React.Component {
 		this.setState({
 			lat: lat,
 			lng: lng,
-			zoom: 15,
+			zoom: 17,
 			foundLocation: true,
 			response: data
 		});
