@@ -1,0 +1,77 @@
+/* line 3, ../scss/base.scss */
+html, body {
+  background-color: #d8d8d8;
+  height: 100%;
+}
+
+/* line 8, ../scss/base.scss */
+#app {
+  background-color: #d8d8d8;
+  height: 100%;
+}
+/* line 12, ../scss/base.scss */
+#app .content {
+  margin-top: 20px;
+}
+/* line 16, ../scss/base.scss */
+#app header {
+  background-color: #6e848d;
+  display: inline-flex;
+  height: 70px;
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* line 23, ../scss/base.scss */
+#app header h1 {
+  color: #bdcf46;
+  font-family: "Century Gothic", sans-serif;
+  font-size: 35px;
+  padding-left: 30px;
+  margin: 0;
+  padding-top: 15px;
+}
+/* line 31, ../scss/base.scss */
+#app header .logo {
+  background-image: url("../img/thow_shade2.png");
+  background-repeat: no-repeat;
+  width: 60px;
+  background-size: contain;
+  margin-top: 5px;
+  margin-left: 10px;
+}
+/* line 40, ../scss/base.scss */
+#app .search-bar {
+  padding: 60px;
+  background-color: #023c58;
+}
+/* line 44, ../scss/base.scss */
+#app .map, #app #map1 {
+  height: 500px;
+}
+/* line 48, ../scss/base.scss */
+#app .side-content {
+  background-color: #006ca2;
+  color: #FFFFFF;
+}
+/* line 52, ../scss/base.scss */
+#app .side-content .shade-index {
+  font-size: 20px;
+}
+/* line 53, ../scss/base.scss */
+#app .side-content .shade-index .number-value, #app .side-content .shade-index .glyphicon {
+  font-size: 40px;
+}
+/* line 58, ../scss/base.scss */
+#app .side-content h3 {
+  display: inline-block;
+  margin-left: 10px;
+}
+/* line 63, ../scss/base.scss */
+#app .side-content .header-icon {
+  font-size: 30px;
+}
+/* line 69, ../scss/base.scss */
+#app table td {
+  padding-right: 30px;
+}

@@ -3,5 +3,3 @@ node_modules/
 public/scss/.sass-cache
 config.codekit
 .sass-cache/
-*.css
-public/js/compiled.js
