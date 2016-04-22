@@ -85,7 +85,7 @@ app.get('/api/:latlong', function (request, response) {
 			var deltaLat = change_in_latitude( sqrtArea )/2;
 			var deltaLong = change_in_longitude(centLat, sqrtArea)/2;
 
-
+//			http://api.census.gov/data/2013/acs5?get=NAME,B01003_001E,B19013_001E&for=block+group:1&in=state:11+county:001+tract:000100&key=c5937f1fcd0b73c260f6da47c2e323354cf3c295
 
 
 console.log(arealand,deltaLat,deltaLong, centLat,centLong);
@@ -113,7 +113,7 @@ var queryStringSum = "SELECT SUM(areaShade) AS summedAreaShade FROM trees WHERE 
 					trees.push(curTree);
 				}
 //console.log(trees);
-// 	blockObject["score"] = arealand / areaShade;
+			 	blockObject["score"] = arealand / areaShade;
 				response.status(status).send(trees,blockObject);
 			});
 
@@ -141,8 +141,6 @@ var queryStringSum = "SELECT SUM(areaShade) AS summedAreaShade FROM trees WHERE 
 			// 	}
 			// ]
 			// }
-			console.log(lat);
-			console.log(long);
 
 
 		})
