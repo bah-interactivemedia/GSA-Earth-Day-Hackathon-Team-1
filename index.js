@@ -53,7 +53,7 @@ app.get('/api/:latlong', function (request, response) {
 //console.log(bodyChunks);
 		}).on('end', function() {
 			var body = Buffer.concat(bodyChunks);
-			//console.log(body +"");
+			console.log(body +"");
 			fipsCodes = JSON.parse(body+"");
 			// ...and/or process the entire body here.
 			 fipsCodes = fipsCodes['result']['geographies']['2010 Census Blocks'][0];
@@ -75,6 +75,8 @@ app.get('/api/:latlong', function (request, response) {
 			let trees = [];
 			let areaShade = 0;
 
+			blockObject['blockGroup'] = blockGroup;
+			//blockObject['population'] = population;
 
 			var sqrtArea = Math.sqrt((arealand))*0.00189394;
 
@@ -107,17 +109,17 @@ var queryStringSum = "SELECT SUM(areaShade) AS summedAreaShade FROM trees WHERE 
 					curTree["lat"] = rows[i]['lat'];
 					curTree["lng"] = rows[i]['lng'];
 					curTree["cond"] = rows[i]['cond'];
-					//console.log(curTree);
+					console.log(curTree);
 					trees.push(curTree);
 				}
 //console.log(trees);
-				response.status(status).send(trees,block);
+// 	blockObject["score"] = arealand / areaShade;
+				response.status(status).send(trees,blockObject);
 			});
 
 // //conditon of trees
 //
 // //todo: calculate score
-// 	blockObject["score"] = arealand / areaShade;
 			//population
 			//income
 
